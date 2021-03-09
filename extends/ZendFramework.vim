@@ -17,16 +17,13 @@ function! ZFFindClass(query)
 endfunction
 command! -nargs=* -bang Zfc call ZFFindClass(<q-args>)
 
-
-function! UfindClassUnderCursor()
-    let classname = expand('<cword>')
-    call ZFFindClass(classname)
+" Find function
+function! ZFFindFunction(query)
+    call fzf#vim#ag('n '.a:query, fzf#vim#with_preview())
 endfunction
-nmap <leader>zfc :call UfindClassUnderCursor()<CR>
 
-function! UfindNamespaceUnderCursor()
-    let classname = expand('<cword>')
-    call ZFFindNamespace(classname)
-endfunction
-nmap <leader>zfn :call UfindNamespaceUnderCursor()<CR>
+nmap <leader>zfc :call ZFFindClass(expand('<cword>'))<CR>
 
+nmap <leader>zfn :call ZFFindNamespace(expand('<cword>'))<CR>
+
+nmap <leader>zff :call ZFFindFunction(expand('<cword>'))<CR>
