@@ -22,8 +22,6 @@ function! ZFFindFunction(query)
     call fzf#vim#ag('n '.a:query, fzf#vim#with_preview())
 endfunction
 
-nmap <leader>zfc :call ZFFindClass(expand('<cword>'))<CR>
-
-nmap <leader>zfn :call ZFFindNamespace(expand('<cword>'))<CR>
-
-nmap <leader>zff :call ZFFindFunction(expand('<cword>'))<CR>
+nmap zfc :call ZFFindClass(expand('<cword>'))<CR>
+nmap zfn :call ZFFindNamespace(expand('<cword>'))<CR>
+nmap zff :call ZFFindFunction(expand('<cword>'))<CR>
