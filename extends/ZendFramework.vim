@@ -13,13 +13,13 @@ command! -nargs=* -bang Zfn call ZFFindClass(<q-args>)
 
 " Find by class name
 function! ZFFindClass(query)
-    call fzf#vim#ag('class ' . a:query, fzf#vim#with_preview())
+    call fzf#vim#ag('class ' . a:query, fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))
 endfunction
 command! -nargs=* -bang Zfc call ZFFindClass(<q-args>)
 
 " Find function
 function! ZFFindFunction(query)
-    call fzf#vim#ag('n '.a:query, fzf#vim#with_preview())
+    call fzf#vim#ag('n '.a:query, fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))
 endfunction
 
 nmap zfc :call ZFFindClass(expand('<cword>'))<CR>
