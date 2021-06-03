@@ -18,11 +18,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'huytd/nvim-forest-all-nighter'
+Plug 'vim-vdebug/vdebug'
 call plug#end()
 
 " Themes
 set termguicolors
-colorscheme forest-all-nighter " forest-night | nightfly 
+colorscheme nightfly " forest-all-nighter | forest-night | nightfly 
 set encoding=UTF-8
 set guifont=Haskplex_Nerd_Regular:h17 
 
@@ -77,8 +78,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " > NERDTree
-let g:NERDTreeQuitOnOpen = 1
-let NERDTreeShowLineNumbers=1 " enable line numbers
+let g:NERDTreeQuitOnOpen = 0
+let g:NERDTreeShowLineNumbers=1 " enable line numbers
+let g:NERDTreeWinSize=50
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " > Tagbar
