@@ -61,6 +61,8 @@ if !exists('g:vscode')
     nmap <leader>l :bnext<CR>
     nmap <leader>h :bprevious<CR>
     nmap <leader>bo :Buffers<CR>
+    nmap <leader>bt :BTags<CR>
+    nmap <leader>bl :BLines<CR>
     
     " NERDTree
     nmap <leader>nt :NERDTreeToggle<CR>
@@ -88,6 +90,9 @@ let g:tagbar_left = 1
 let g:tagbar_vertical = 20
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
+
+" > FZF config
+let g:fzf_tags_command = 'ctags -R -f tags'
 
 " Custom commands
 function! OnlyAndNerdtree()
