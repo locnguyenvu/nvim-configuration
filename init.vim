@@ -18,12 +18,17 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'huytd/nvim-forest-all-nighter'
+Plug 'morhetz/gruvbox'
 Plug 'vim-vdebug/vdebug'
+Plug 'neovim/nvim-lspconfig'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 " Themes
 set termguicolors
-colorscheme nightfly " forest-all-nighter | forest-night | nightfly 
+colorscheme gruvbox " nightfly | forest-all-nighter | forest-night | nightfly 
 set encoding=UTF-8
 set guifont=Haskplex_Nerd_Regular:h17 
 
@@ -63,6 +68,7 @@ if !exists('g:vscode')
     nmap <leader>bo :Buffers<CR>
     nmap <leader>bt :BTags<CR>
     nmap <leader>bl :BLines<CR>
+    nmap <leader>d :bp\|bd #<CR>
     
     " NERDTree
     nmap <leader>nt :NERDTreeToggle<CR>
@@ -74,8 +80,7 @@ endif
 
 " Extensions config
 " > Airline
-let g:airline_theme = 'forest_night'
-let g:airline_theme='simple'
+let g:airline_theme='base16_3024'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
@@ -92,7 +97,7 @@ let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 
 " > FZF config
-let g:fzf_tags_command = 'ctags -R -f tags'
+let g:fzf_tags_command = '/opt/ctags/ctags -R -f tags'
 
 " Custom commands
 function! OnlyAndNerdtree()
@@ -102,6 +107,24 @@ function! OnlyAndNerdtree()
 endfunction
 
 command! Only call OnlyAndNerdtree()
+
+" vim-go
+let g:go_gopls_enabled = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_generate_tags = 1
+
+" gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+
+" Setup cursor
+if $TERM == 'xterm-256color' 
+    let g:togglecursor_force = 'xterm'
+endif
 
 source ~/.config/nvim/extends/utility.vim
 source ~/.config/nvim/extends/ZendFramework.vim

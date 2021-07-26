@@ -17,3 +17,18 @@ func! GetSelectedText()
   normal gv
   return result
 endfunc
+
+nnoremap <leader>g :set operatorfunc=GrepOperator<cr>g@
+vnoremap <leader>g :<c-u>call GrepOperator(visualmode())<cr>
+func! GrepOperator(type)
+    if a:type ==# 'v'
+        normal! `<v`>y
+    elseif a:type ==# 'char'
+        normal! `[v`]y
+    else
+        return
+    endif
+
+    execute "grep! -R " . shellescape(@@) . " ."
+    copen
+endfunc

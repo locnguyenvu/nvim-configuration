@@ -12,13 +12,13 @@ command! -nargs=* -bang Zfn call ZFFindClass(<q-args>)
 
 " Find by class name
 function! ZFFindClass(query)
-    call fzf#vim#ag('(interface|class) '.a:query, fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))
+    call fzf#vim#ag('(interface|class) '.a:query.'\s', fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))
 endfunction
 command! -nargs=* -bang Zfc call ZFFindClass(<q-args>)
 
 " Find function
 function! ZFFindFunction(query)
-    call fzf#vim#ag('n '.a:query, fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))
+    call fzf#vim#ag('function '.a:query.'\s*\(', fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))
 endfunction
 
 
@@ -38,5 +38,7 @@ nmap zfd :call fzf#vim#tags(expand('<cword>'), {
   \         --preview ''' . preview_file . ' {}'''
   \ })<CR>
 
+nmap zfe :call fzf#vim#tags(expand('<cword>'))<CR>
+
 " Find constant
-nmap zfw :call fzf#vim#ag('const '.expand('<cword>'), fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))<CR>
+nmap zfw :call fzf#vim#ag('const '.expand('<cword>').'\s*=', fzf#vim#with_preview({ 'options': ['--preview-window', 'up:80%'] }))<CR>
