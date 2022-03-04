@@ -88,15 +88,46 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowLineNumbers=1 " enable line numbers
 let g:NERDTreeWinSize=50
+let g:NERDTreeIgnore = ['__pycache__', '.*\.egg-info']
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " > Tagbar
-let g:tagbar_left = 1
+let g:tagbar_position='botright vertical'
+let g:tagbar_width= 50
+let g:tagbar_left = 0
 let g:tagbar_vertical = 20
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
+let g:tagbar_type_go = {
+	\ 'ctagstype' : 'go',
+	\ 'kinds'     : [
+		\ 'p:package',
+		\ 'i:imports:1',
+		\ 'c:constants',
+		\ 'v:variables',
+		\ 't:types',
+		\ 'n:interfaces',
+		\ 'w:fields',
+		\ 'e:embedded',
+		\ 'm:methods',
+		\ 'r:constructor',
+		\ 'f:functions'
+	\ ],
+	\ 'sro' : '.',
+	\ 'kind2scope' : {
+		\ 't' : 'ctype',
+		\ 'n' : 'ntype'
+	\ },
+	\ 'scope2kind' : {
+		\ 'ctype' : 't',
+		\ 'ntype' : 'n'
+	\ },
+	\ 'ctagsbin'  : '/home/loc/go/bin/gotags',
+	\ 'ctagsargs' : '-sort -silent'
+\ }
 
 " > FZF config
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 let g:fzf_tags_command = '/opt/ctags/ctags -R -f tags'
 
 " Custom commands
