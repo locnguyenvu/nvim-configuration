@@ -24,11 +24,12 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'NLKNguyen/papercolor-theme'
 call plug#end()
 
 " Themes
 set termguicolors
-colorscheme gruvbox " nightfly | forest-all-nighter | forest-night | nightfly 
+colorscheme gruvbox " nightfly | forest-all-nighter | forest-night
 set encoding=UTF-8
 set guifont=Haskplex_Nerd_Regular:h17 
 
@@ -68,7 +69,7 @@ if !exists('g:vscode')
     nmap <leader>bo :Buffers<CR>
     nmap <leader>bt :BTags<CR>
     nmap <leader>bl :BLines<CR>
-    nmap <leader>d :bp\|bd #<CR>
+    nmap <leader>d :bp\|bw #<CR>
     
     " NERDTree
     nmap <leader>nt :NERDTreeToggle<CR>
@@ -88,13 +89,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowLineNumbers=1 " enable line numbers
 let g:NERDTreeWinSize=50
-let g:NERDTreeIgnore = ['__pycache__', '.*\.egg-info']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " > Tagbar
-let g:tagbar_position='botright vertical'
+let g:tagbar_position = "right"
 let g:tagbar_width= 50
-let g:tagbar_left = 0
+let g:tagbar_left = 1
 let g:tagbar_vertical = 20
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
@@ -139,6 +140,18 @@ endfunction
 
 command! Only call OnlyAndNerdtree()
 
+function! LightTheme()
+    set background=light
+    colorscheme PaperColor
+    let g:airline_theme='papercolor'
+endfunction
+
+function! DarkTheme()
+    set background=dark
+    colorscheme gruvbox
+    let g:airline_theme='bubblegum'
+endfunction
+
 " vim-go
 let g:go_gopls_enabled = 1
 let g:go_highlight_operators = 1
@@ -151,6 +164,9 @@ let g:go_highlight_generate_tags = 1
 
 " gruvbox
 let g:gruvbox_contrast_dark = 'hard'
+
+" coc
+let g:node_client_debug = 1
 
 " Setup cursor
 if $TERM == 'xterm-256color' 
