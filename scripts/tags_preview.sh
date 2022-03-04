@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 INPUT="$@"
 
-FILEPATH=$(echo "$@" | grep -oE '[a-zA-Z0-9]+(\-|_)*(/[a-zA-Z0-9]+.*)*\.[a-zA-z0-9]{1,5}')
+FILEPATH=$(echo "$@" | awk -F '[[:space:]]+' '{print $2}')
 DEFINEPATTERN=$(echo "$@" | grep -oE '\/\^.*/\;' | grep -oE '[^\/\^[:space:]].*[^\$\/;]')
 
 LINE=$(grep -nF "${DEFINEPATTERN}" "${FILEPATH}" | cut -d: -f 1)

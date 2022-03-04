@@ -89,6 +89,7 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowLineNumbers=1 " enable line numbers
 let g:NERDTreeWinSize=50
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " > Tagbar
