@@ -74,16 +74,36 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/LeaderF",
     url = "https://github.com/Yggdroot/LeaderF"
   },
+  ["asyncomplete-lsp.vim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/asyncomplete-lsp.vim",
+    url = "https://github.com/prabirshrestha/asyncomplete-lsp.vim"
+  },
+  ["asyncomplete.vim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/asyncomplete.vim",
+    url = "https://github.com/prabirshrestha/asyncomplete.vim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  dracula = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/dracula",
+    url = "https://github.com/dracula/vim"
   },
   ["lualine.nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/root/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  nerdtree = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nerdtree",
+    url = "https://github.com/preservim/nerdtree"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -94,6 +114,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["vim-devicons"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-lsp"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-lsp",
+    url = "https://github.com/prabirshrestha/vim-lsp"
+  },
+  ["vim-lsp-settings"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-lsp-settings",
+    url = "https://github.com/mattn/vim-lsp-settings"
   }
 }
 

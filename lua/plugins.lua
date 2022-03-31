@@ -7,7 +7,17 @@ return require('packer').startup(function()
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'  }
-	use {'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons', opt = true } 
-    use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' }
+	use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'  }
+	use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons', opt = true } 
+    
+    use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' } -- requires pynvim, python-devel
+    use { 'dracula/vim', as = 'dracula' }
+    use { 'preservim/nerdtree' }
+    use { 'ryanoasis/vim-devicons' }
+    
+    use { 'prabirshrestha/vim-lsp' }
+    use { 'mattn/vim-lsp-settings' }
+    use { 'prabirshrestha/asyncomplete.vim' }
+    use { 'prabirshrestha/asyncomplete-lsp.vim' }
+
 end)
