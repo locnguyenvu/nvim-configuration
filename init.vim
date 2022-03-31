@@ -76,9 +76,15 @@ set rnu
 set mouse-=a
 syntax enable
 filetype plugin indent on
-set clipboard^=unnamed,unnamedplus
-vmap '' :w !pbcopy<CR><CR>
 
+let g:python3_host_prog="C:\\Python39\\python.exe"
+let &shell = has('win32') ? 'powershell' : 'pwsh'
+let  &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+let &shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+set shellquote= shellxquote=
+set clipboard^=unnamed,unnamedplus
+vmap '' :w !set-clipboard<CR><CR>
 
 " Shortcut
 let mapleader = " "
