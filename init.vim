@@ -84,12 +84,9 @@ vmap '' :w !pbcopy<CR><CR>
 let mapleader = " "
 let localmapleader = "\<Space>"
 
-" Buffer 
+" BufferLine
 nmap <leader>l :BufferLineCycleNext<CR>
 nmap <leader>h :BufferLineCyclePrev<CR>
-nmap <leader>bo :Buffers<CR>
-nmap <leader>bt :BTags<CR>
-nmap <leader>bl :BLines<CR>
 nmap <leader>d :BufferLinePickClose<CR>
 
 " NERDTree
@@ -102,3 +99,5 @@ autocmd FileType nerdtree setlocal relativenumber " make sure relative line numb
 
 " Leaderf
 map <C-p> :Leaderf file --popup<CR>
+map <C-o> :Leaderf buffer --popup<CR>
+map <C-i> :Leaderf function --popup<CR>
