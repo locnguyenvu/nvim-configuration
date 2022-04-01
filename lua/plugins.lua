@@ -11,13 +11,18 @@ return require('packer').startup(function()
 	use { 'nvim-lualine/lualine.nvim', requires = 'kyazdani42/nvim-web-devicons', opt = true } 
     
     use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' } -- requires pynvim, python-devel
-    use { 'dracula/vim', as = 'dracula' }
     use { 'preservim/nerdtree' }
     use { 'ryanoasis/vim-devicons' }
     
+    -- Language server
     use { 'prabirshrestha/vim-lsp' }
     use { 'mattn/vim-lsp-settings' }
     use { 'prabirshrestha/asyncomplete.vim' }
     use { 'prabirshrestha/asyncomplete-lsp.vim' }
+    use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
+
+    -- Colorschema
+    use { 'dracula/vim', as = 'dracula' }
+    use { 'morhetz/gruvbox', as = ' gruvbox' }
 
 end)

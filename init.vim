@@ -61,7 +61,7 @@ EOF
 
 " Theme
 set termguicolors
-colorscheme dracula
+colorscheme gruvbox
 
 " IDE config
 set tabstop=4       " show existing tab with 4 spaces width
@@ -98,6 +98,7 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info$']
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " Leaderf
-map <C-p> :Leaderf file --popup<CR>
-map <C-o> :Leaderf buffer --popup<CR>
-map <C-i> :Leaderf function --popup<CR>
+nmap zfb :Leaderf buffer --popup<CR>
+nmap zfc :Leaderf function --popup<CR>
+nmap zff :Leaderf file --popup<CR>
+nmap zfd :Leaderf tag --cword --popup<CR>
