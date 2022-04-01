@@ -98,7 +98,12 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info$']
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " Leaderf
+let g:Lf_WildIgnore = {
+            \ 'dir': ['vendor'],
+            \ 'file': ['*.py[co]']
+            \}
 nmap zfb :Leaderf buffer --popup<CR>
 nmap zfc :Leaderf function --popup<CR>
 nmap zff :Leaderf file --popup<CR>
 nmap zfd :Leaderf tag --cword --popup<CR>
+
