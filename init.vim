@@ -55,13 +55,17 @@ require("bufferline").setup{
         modified_icon = '●',
         left_trunc_marker = '',
         right_trunc_marker = '',
+        diagnostics = 'nvim_lsp',
+        show_close_icon = false,
+        show_buffer_close_icons = false,
+        offsets = {{filetype = "NvimTree", text = "File Explorer"}},
     }
 }
 EOF
 
 " Theme
 set termguicolors
-colorscheme gruvbox
+colorscheme dracula
 
 " IDE config
 set tabstop=4       " show existing tab with 4 spaces width
@@ -87,10 +91,13 @@ let localmapleader = "\<Space>"
 " BufferLine
 nmap <leader>l :BufferLineCycleNext<CR>
 nmap <leader>h :BufferLineCyclePrev<CR>
-nmap <leader>d :BufferLinePickClose<CR>
+nmap <leader>bd :BufferLinePickClose<CR>
+nmap <leader>bb :BufferLinePick<CR>
 
 " NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>nf :NERDTreeFind %<CR>
+nmap <leader>nr :NERDTreeRefreshRoot<CR>
 let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowLineNumbers=1 " enable line numbers
 let g:NERDTreeWinSize=50
@@ -99,11 +106,12 @@ autocmd FileType nerdtree setlocal relativenumber " make sure relative line numb
 
 " Leaderf
 let g:Lf_WildIgnore = {
-            \ 'dir': ['vendor'],
+            \ 'dir': ['vendor', '.venv', '__pycache__'],
             \ 'file': ['*.py[co]']
             \}
-nmap zfb :Leaderf buffer --popup<CR>
-nmap zfc :Leaderf function --popup<CR>
+let g:Lf_ShortcutB = '<Leader>bo'
+let g:Lf_ShortcutF = '<C-p>'
 nmap zff :Leaderf file --popup<CR>
+nmap zfc :Leaderf function --popup<CR>
 nmap zfd :Leaderf tag --cword --popup<CR>
 
