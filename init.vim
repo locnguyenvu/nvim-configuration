@@ -61,6 +61,8 @@ require("bufferline").setup{
         offsets = {{filetype = "NvimTree", text = "File Explorer"}},
     }
 }
+
+require('feline').setup()
 EOF
 
 " Theme
@@ -111,7 +113,7 @@ let g:Lf_WildIgnore = {
             \}
 let g:Lf_ShortcutB = '<Leader>bo'
 let g:Lf_ShortcutF = '<C-p>'
-nmap zff :Leaderf file --popup<CR>
-nmap zfc :Leaderf function --popup<CR>
-nmap zfd :Leaderf tag --cword --popup<CR>
+nmap zff :Leaderf file<CR>
+nmap zfc :Leaderf function<CR>
+nmap zfd :Leaderf tag --cword<CR>
 

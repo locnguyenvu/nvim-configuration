@@ -13,6 +13,8 @@ return require('packer').startup(function()
     use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' } -- requires pynvim, python-devel
     use { 'preservim/nerdtree' }
     use { 'ryanoasis/vim-devicons' }
+    use { 'tpope/vim-fugitive' }
+    use { 'feline-nvim/feline.nvim' }
     
     -- Language server
     use { 'prabirshrestha/vim-lsp' }
