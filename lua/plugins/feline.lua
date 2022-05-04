@@ -147,6 +147,21 @@ components.active[1][3] = {
     },
   }
 }
+-- TreeSitter
+components.active[1][4] = {
+  provider = function()
+    return require("nvim-treesitter").statusline({
+        indicator_size = 90,
+        type_patterns = {'class', 'function', 'method'},
+        transform_fn = function(line) return line:gsub('%s*[%[%(%{]*%s*$', '') end,
+        separator = ' -> '
+    })
+  end,
+  enabled = function()
+    return ts_parsers.has_parser()
+  end,
+  right_sep = ' '
+}
 
 -- MID
 
@@ -312,20 +327,8 @@ components.active[3][6] = {
   },
   right_sep = ' '
 }
--- TreeSitter
-components.active[3][7] = {
-  provider = function()
-    local node = require("nvim-treesitter.ts_utils").get_node_at_cursor()
-    return ("%d:%s [%d, %d] - [%d, %d]")
-      -- :format(node:symbol(), node:type(), node:range())
-  end,
-  enabled = function()
-    local ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
-    return ok and ts_parsers.has_parser()
-  end
-}
 -- lineInfo
-components.active[3][8] = {
+components.active[3][7] = {
   provider = 'position',
   hl = {
     fg = 'white',
@@ -335,7 +338,7 @@ components.active[3][8] = {
   right_sep = ' '
 }
 -- linePercent
-components.active[3][9] = {
+components.active[3][8] = {
   provider = 'line_percentage',
   hl = {
     fg = 'white',
@@ -345,7 +348,7 @@ components.active[3][9] = {
   right_sep = ' '
 }
 -- scrollBar
-components.active[3][10] = {
+components.active[3][9] = {
   provider = 'scroll_bar',
   hl = {
     fg = 'yellow',
