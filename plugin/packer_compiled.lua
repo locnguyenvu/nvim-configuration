@@ -89,7 +89,13 @@ _G.packer_plugins = {
     path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/start/asyncomplete.vim",
     url = "https://github.com/prabirshrestha/asyncomplete.vim"
   },
+  ["blamer.nvim"] = {
+    loaded = true,
+    path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/start/blamer.nvim",
+    url = "https://github.com/APZelos/blamer.nvim"
+  },
   ["bufferline.nvim"] = {
+    config = { "require'plugins.bufferline'" },
     loaded = true,
     path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
@@ -100,20 +106,21 @@ _G.packer_plugins = {
     url = "https://github.com/dracula/vim"
   },
   ["feline.nvim"] = {
+    config = { "require'plugins.feline'" },
     loaded = true,
     path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
-  },
-  ["lualine.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
-    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   nerdtree = {
     loaded = true,
     path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/preservim/nerdtree"
+  },
+  ["nvim-treesitter"] = {
+    config = { "require'plugins.nvim-treesitter'" },
+    loaded = true,
+    path = "/Users/locnguyen/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -153,6 +160,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require'plugins.bufferline'
+time([[Config for bufferline.nvim]], false)
+-- Config for: feline.nvim
+time([[Config for feline.nvim]], true)
+require'plugins.feline'
+time([[Config for feline.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require'plugins.nvim-treesitter'
+time([[Config for nvim-treesitter]], false)
 if should_profile then save_profiles() end
 
 end)

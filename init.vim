@@ -48,26 +48,13 @@ augroup highlight_yank
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
 augroup END
 
-lua << EOF
-require("bufferline").setup{
-    options = {
-        indicator_icon = '▎',
-        modified_icon = '●',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
-        diagnostics = 'nvim_lsp',
-        show_close_icon = false,
-        show_buffer_close_icons = false,
-        offsets = {{filetype = "NvimTree", text = "File Explorer"}},
-    }
-}
-
-require('feline').setup()
-EOF
-
 " Theme
 set termguicolors
 colorscheme dracula
+
+lua << EOF
+EOF
+
 
 " IDE config
 set tabstop=4       " show existing tab with 4 spaces width
