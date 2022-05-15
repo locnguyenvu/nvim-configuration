@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/root/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/root/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/root/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/root/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/root/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "C:\\Users\\loc\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?.lua;C:\\Users\\loc\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\share\\lua\\5.1\\?\\init.lua;C:\\Users\\loc\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?.lua;C:\\Users\\loc\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\luarocks\\rocks-5.1\\?\\init.lua"
+local install_cpath_pattern = "C:\\Users\\loc\\AppData\\Local\\Temp\\nvim\\packer_hererocks\\2.1.0-beta3\\lib\\lua\\5.1\\?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,68 +71,98 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LeaderF = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/LeaderF",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LeaderF",
     url = "https://github.com/Yggdroot/LeaderF"
   },
   ["asyncomplete-lsp.vim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/asyncomplete-lsp.vim",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\asyncomplete-lsp.vim",
     url = "https://github.com/prabirshrestha/asyncomplete-lsp.vim"
   },
   ["asyncomplete.vim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/asyncomplete.vim",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\asyncomplete.vim",
     url = "https://github.com/prabirshrestha/asyncomplete.vim"
   },
   ["bufferline.nvim"] = {
+    config = { "require'plugins.bufferline'" },
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
   dracula = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/dracula",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula",
     url = "https://github.com/dracula/vim"
+  },
+  ["feline.nvim"] = {
+    config = { "require'plugins.feline'" },
+    loaded = true,
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\feline.nvim",
+    url = "https://github.com/feline-nvim/feline.nvim"
   },
   ["lualine.nvim"] = {
     loaded = false,
     needs_bufread = false,
-    path = "/root/.local/share/nvim/site/pack/packer/opt/lualine.nvim",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   nerdtree = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nerdtree",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdtree",
     url = "https://github.com/preservim/nerdtree"
+  },
+  ["nvim-treesitter"] = {
+    config = { "require'plugins.nvim-treesitter'" },
+    loaded = true,
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["vim-devicons"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-devicons",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-devicons",
     url = "https://github.com/ryanoasis/vim-devicons"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-lsp"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-lsp",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-lsp",
     url = "https://github.com/prabirshrestha/vim-lsp"
   },
   ["vim-lsp-settings"] = {
     loaded = true,
-    path = "/root/.local/share/nvim/site/pack/packer/start/vim-lsp-settings",
+    path = "C:\\Users\\loc\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-lsp-settings",
     url = "https://github.com/mattn/vim-lsp-settings"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: feline.nvim
+time([[Config for feline.nvim]], true)
+require'plugins.feline'
+time([[Config for feline.nvim]], false)
+-- Config for: bufferline.nvim
+time([[Config for bufferline.nvim]], true)
+require'plugins.bufferline'
+time([[Config for bufferline.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require'plugins.nvim-treesitter'
+time([[Config for nvim-treesitter]], false)
 if should_profile then save_profiles() end
 
 end)

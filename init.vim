@@ -49,14 +49,6 @@ augroup highlight_yank
 augroup END
 
 lua << EOF
-require("bufferline").setup{
-    options = {
-        indicator_icon = '▎',
-        modified_icon = '●',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
-    }
-}
 EOF
 
 " Theme
@@ -77,7 +69,7 @@ set mouse-=a
 syntax enable
 filetype plugin indent on
 
-let g:python3_host_prog="C:\\Python39\\python.exe"
+let g:python3_host_prog="C:\\Users\\loc\\AppData\\Local\\Programs\\Python\\Python310\\python.exe"
 let &shell = has('win32') ? 'powershell' : 'pwsh'
 let  &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
 let &shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
@@ -97,13 +89,15 @@ nmap <leader>d :BufferLinePickClose<CR>
 
 " NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
-let g:NERDTreeQuitOnOpen = 0
+nmap <leader>nr :NERDTreeRefreshRoot<CR>
+let g:NERDTreeQuitOnOpen = 1
 let g:NERDTreeShowLineNumbers=1 " enable line numbers
 let g:NERDTreeWinSize=50
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info$']
 autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " Leaderf
-map <C-p> :Leaderf file --popup<CR>
-map <C-o> :Leaderf buffer --popup<CR>
-map <C-i> :Leaderf function --popup<CR>
+map <C-p> :Leaderf file<CR>
+map <C-o> :Leaderf buffer<CR>
+map <C-i> :Leaderf function<CR>
+let g:Lf_Ctags="C:\\ProgramData\\chocolatey\\bin\\ctags.exe"
