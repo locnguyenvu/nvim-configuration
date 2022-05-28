@@ -86,11 +86,12 @@ let localmapleader = "\<Space>"
 nmap <leader>l :BufferLineCycleNext<CR>
 nmap <leader>h :BufferLineCyclePrev<CR>
 nmap <leader>d :BufferLinePickClose<CR>
+nmap <leader>e :BufferLinePick<CR>
 
 " NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
 nmap <leader>nr :NERDTreeRefreshRoot<CR>
-let g:NERDTreeQuitOnOpen = 1
+let g:NERDTreeQuitOnOpen = 0
 let g:NERDTreeShowLineNumbers=1 " enable line numbers
 let g:NERDTreeWinSize=50
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info$']

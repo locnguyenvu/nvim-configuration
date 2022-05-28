@@ -102,7 +102,7 @@ force_inactive.buftypes = {
 
 -- vi-mode
 components.active[1][1] = {
-  provider = ' ANFIN ',
+  provider = ' NVIM ',
   hl = function()
     local val = {}
 
