@@ -1,4 +1,5 @@
 lua require('plugins')
+lua require('config')
 
 augroup packer_user_config
 	autocmd!
@@ -49,39 +50,39 @@ augroup highlight_yank
 augroup END
 
 " Theme
-set termguicolors
-colorscheme dracula
+" set termguicolors
+" colorscheme dracula
 
 lua << EOF
 EOF
 
 
 " IDE config
-set tabstop=4       " show existing tab with 4 spaces width
-set shiftwidth=4    " when indenting with '>', use 4 spaces width, On pressing tab, insert 4 spaces
-set incsearch       " search as characters are entered
-set hlsearch        " highlight matches
-set expandtab
-set autoindent
-set autoread
-set nu
-set rnu
-set mouse-=a
-syntax enable
-filetype plugin indent on
-set clipboard^=unnamed,unnamedplus
-vmap '' :w !pbcopy<CR><CR>
+" set tabstop=4       " show existing tab with 4 spaces width
+" set shiftwidth=4    " when indenting with '>', use 4 spaces width, On pressing tab, insert 4 spaces
+" set incsearch       " search as characters are entered
+" set hlsearch        " highlight matches
+" set expandtab
+" set autoindent
+" set autoread
+" set nu
+" set rnu
+" set mouse-=a
+" syntax enable
+" filetype plugin indent on
+" set clipboard^=unnamed,unnamedplus
+" vmap '' :w !pbcopy<CR><CR>
 
 
 " Shortcut
-let mapleader = " "
-let localmapleader = "\<Space>"
+" let mapleader = " "
+" let localmapleader = "\<Space>"
 
 " BufferLine
-nmap <leader>l :BufferLineCycleNext<CR>
-nmap <leader>h :BufferLineCyclePrev<CR>
-nmap <leader>bd :BufferLinePickClose<CR>
-nmap <leader>bb :BufferLinePick<CR>
+" nmap <leader>l :BufferLineCycleNext<CR>
+" nmap <leader>h :BufferLineCyclePrev<CR>
+" nmap <leader>d :BufferLinePickClose<CR>
+" nmap <leader>e :BufferLinePick<CR>
 
 " NERDTree
 nmap <leader>nt :NERDTreeToggle<CR>
@@ -98,9 +99,11 @@ let g:Lf_WildIgnore = {
             \ 'dir': ['vendor', '.venv', '__pycache__'],
             \ 'file': ['*.py[co]']
             \}
-let g:Lf_ShortcutB = '<Leader>bo'
 let g:Lf_ShortcutF = '<C-p>'
-nmap zff :Leaderf file<CR>
-nmap zfc :Leaderf function<CR>
-nmap zfd :Leaderf tag --cword<CR>
+let g:Lf_UseCache = 0
+nmap mm :Leaderf function<CR>
+nmap tt :Leaderf tag --cword<CR>
 
+:nnoremap <Leader>q" ciw""<Esc>P
+:nnoremap <Leader>q' ciw''<Esc>P
+:nnoremap <Leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P

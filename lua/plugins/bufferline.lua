@@ -10,3 +10,10 @@ require("bufferline").setup{
         offsets = {{filetype = "NvimTree", text = "File Explorer"}},
     }
 }
+
+local map = vim.api.nvim_set_keymap
+
+map('n', '<leader>l', ':BufferLineCycleNext<CR>', {})
+map('n', '<leader>h', ':BufferLineCyclePrev<CR>', {})
+map('n', '<leader>e', ':BufferLinePick<CR>', {})
+map('n', '<leader>d', ':BufferLinePickClose<CR>', {})
