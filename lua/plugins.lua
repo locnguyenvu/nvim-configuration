@@ -15,7 +15,7 @@ return require('packer').startup(function()
 	use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', config = lua_path"bufferline"  }
     
     use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' } -- requires pynvim, python-devel
-    use { 'preservim/nerdtree' }
+    use { 'preservim/nerdtree',  config = lua_path"nerdtree" }
     use { 'ryanoasis/vim-devicons' }
     use { 'tpope/vim-fugitive' }
     use { "nvim-treesitter/nvim-treesitter", config = lua_path"nvim-treesitter" }

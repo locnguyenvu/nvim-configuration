@@ -85,14 +85,14 @@ EOF
 " nmap <leader>e :BufferLinePick<CR>
 
 " NERDTree
-nmap <leader>nt :NERDTreeToggle<CR>
-nmap <leader>nf :NERDTreeFind %<CR>
-nmap <leader>nr :NERDTreeRefreshRoot<CR>
-let g:NERDTreeQuitOnOpen = 0
-let g:NERDTreeShowLineNumbers=1 " enable line numbers
-let g:NERDTreeWinSize=50
-let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info$']
-autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
+" nmap <leader>nt :NERDTreeToggle<CR>
+" nmap <leader>nf :NERDTreeFind %<CR>
+" nmap <leader>nr :NERDTreeRefreshRoot<CR>
+" let g:NERDTreeQuitOnOpen = 0
+" let g:NERDTreeShowLineNumbers=1 " enable line numbers
+" let g:NERDTreeWinSize=50
+" let NERDTreeIgnore = ['\.pyc$', '__pycache__', '\.egg-info$']
+" autocmd FileType nerdtree setlocal relativenumber " make sure relative line numbers are used
 
 " Leaderf
 let g:Lf_WildIgnore = {
