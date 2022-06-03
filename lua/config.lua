@@ -22,12 +22,6 @@ bo.expandtab = true
 bo.autoindent = true
 bo.autoread = true
 
-
-option = { nowait = true }
-vim.api.nvim_set_keymap('v', '<Nul>', ':w !pbcopy<cr><cr>', option)
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {})
-vim.g.mapleader = ' '
-
-if vim.api.nvim_call_function('executable', {'pyls'}) then
-
-end
+vim.api.nvim_set_option_value('tabstop', 4, { scope = 'local' })
+vim.api.nvim_set_option_value('shiftwidth', 4, { scope = 'local' })
+vim.api.nvim_set_option_value('expandtab', true, { scope = 'local' })

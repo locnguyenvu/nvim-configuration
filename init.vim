@@ -1,19 +1,17 @@
 lua require('plugins')
 lua require('config')
+lua require('mappings')
+lua require('lsp')
 
 augroup packer_user_config
 	autocmd!
 	autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 augroup end
 
-if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'allowlist': ['python'],
-        \ })
-endif
+" if executable('pyls')
+"     " pip install python-language-server
+"     au User lsp_setup call lsp#register_server({ 'name': 'pyls', 'cmd': {server_info->['pyls']}, 'allowlist': ['python'], })
+" endif
 
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
