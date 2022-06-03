@@ -161,22 +161,22 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: feline.nvim
-time([[Config for feline.nvim]], true)
-require'plugins.feline'
-time([[Config for feline.nvim]], false)
 -- Config for: bufferline.nvim
 time([[Config for bufferline.nvim]], true)
 require'plugins.bufferline'
 time([[Config for bufferline.nvim]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-require'plugins.nvim-treesitter'
-time([[Config for nvim-treesitter]], false)
+-- Config for: feline.nvim
+time([[Config for feline.nvim]], true)
+require'plugins.feline'
+time([[Config for feline.nvim]], false)
 -- Config for: nerdtree
 time([[Config for nerdtree]], true)
 require'plugins.nerdtree'
 time([[Config for nerdtree]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+require'plugins.nvim-treesitter'
+time([[Config for nvim-treesitter]], false)
 if should_profile then save_profiles() end
 
 end)

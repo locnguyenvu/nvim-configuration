@@ -10,9 +10,8 @@ return require('packer').startup(function()
     end
 
 	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
-
-	use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', config = lua_path"bufferline"  }
+    use 'wbthomason/packer.nvim'
+    use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons', config = lua_path"bufferline"  }
     
     use { 'Yggdroot/LeaderF', run = ':LeaderfInstallCExtension' } -- requires pynvim, python-devel
     use { 'preservim/nerdtree',  config = lua_path"nerdtree" }
